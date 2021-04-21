@@ -1,0 +1,23 @@
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr class="a">
+                <th>Grocery</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let mov of vtbl'>
+                <td>
+                        <img [src]='mov.itemImg' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                        </td>
+                            <td>{{mov.itemName}}</td>
+                <td>{{mov.itemprice}}</td>
+    <td><button class="btn btn-info" (click)="onDelete(mov.itemName)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr class="a">
+                <th>Vegetables</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let mov of vg'>
+                        <img [src]='mov.itemImg' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                <td>{{mov.itemName}}</td>
+                <td>{{mov.itemprice}}</td>
+    <td><button class="btn btn-info" (click)="onDelete(mov.vegetablename)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

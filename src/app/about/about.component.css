@@ -1,0 +1,12 @@
+#navbarNav{
+    background: rgb(243, 240, 240);
+    padding-left: 25%;
+    letter-spacing: 4px;
+    font-size: 20px;
+    color: rgb(226, 198, 156);
+    font-style: oblique;
+}
+#tot{
+    background-color: rgb(252, 225, 185);
+    color: rgb(158, 99, 12);
+}

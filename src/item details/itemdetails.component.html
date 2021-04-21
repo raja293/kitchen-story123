@@ -1,0 +1,23 @@
+<div class="card shadow">
+    <div class="card-header heading">
+
+        {{pgtitle + item.itemName}}
+        <h4>Starring..{{item.itemprice}}</h4>
+        <img src="{{item.itemImg}}" style="height: 400px; width: 400px;">
+        
+    </div>
+    <div>
+        
+    </div>
+    <div class='card-footer'>
+        <button class="btn btn-outline-secondary" (click)='getback()'>
+
+            Back
+        </button>
+        <button class="btn btn-info"  (click)='addToCart(item)'>Add to Cart</button>
+        <h3>Quantity</h3>
+        <button class="btn btn-dark" (click)='increment()'>+</button>{{item.itemquantity}}
+        <button class="btn btn-dark" (click)='decrement()'>-</button>
+    </div>
+
+</div>

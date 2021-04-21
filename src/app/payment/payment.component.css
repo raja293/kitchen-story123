@@ -1,0 +1,9 @@
+h1{
+    background: tomato;
+    color: rgb(229, 243, 238);
+    align-self: center;
+    position:absolute;
+    margin: 7% 20% 20% 30%;
+    padding: 10% 10% 10% 10%;
+    border-radius: 30px;
+}

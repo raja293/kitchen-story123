@@ -1,0 +1,56 @@
+<div class='card'>
+    <div class='card-header heading'>
+        <!-- one-way binding /Expression/interpolation - from comp->html -->
+        {{movtitle}}
+
+    </div>
+    <div class='card-body'>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+            </div>
+            <!-- two-way binding/model binding -->
+            <input type="text" class="form-control" placeholder="Search for Items" [(ngModel)]="searchTerm">
+
+        </div>
+        <div class='row'>
+            <h5>Search by:{{searchTerm}}</h5>
+        </div>
+
+<div class='table-responsive'>
+    <table class="table ">
+        <tr class="bg-info">
+            <th>
+                <!-- event binding/oneway binding -data flow from html -> component -->
+                <button class="btn btn-warning" (click)='Imagedisp()'> Item pic</button>
+
+            </th>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Item category</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Add to cart</th>
+
+        </tr>
+        <tr *ngFor='let it of items'>
+            <!-- Pipes/custom pipes -->
+            <td *ngIf='dispic'>
+                <!-- Property binding 1way -->
+                <img [src]='it.itemImg' [style.width.px]='imgWidth' [style.height.px]='imgHeight'
+                    [style.borderRadius.px]='imgRadius'>
+            </td>
+            <td>{{it.itemid}}</td>
+            <td><a [routerLink]="['/items',it.itemid]"> {{it.itemName}}</a>
+
+            </td>
+            <td>{{it.itemcat|lowercase}}</td>
+            <td>{{it.itemprice | currency:"&#8377;"}}</td>
+            <td>{{it.itemRating}}</td>
+            <td><button class="btn btn-warning" (click)='addToCart(it)'> Add to cart</button>
+            </td>
+        </tr>
+
+
+    </table>
+</div>

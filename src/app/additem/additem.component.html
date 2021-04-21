@@ -1,0 +1,136 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="card container">
+    <div class="card-header heading" align="center">
+        Add new item here!
+    </div>
+<div class="card-body lg-4 md-6 sm-12 xs-12" align="center">
+    <form novalidate (ngSubmit)="onFruitAdd(regForm)" #regForm="ngForm">
+        <!-- fruitid -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="itemid">Item ID</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="itemid" 
+                minlength="1" 
+                name="itemid" 
+                [(ngModel)]=kitchen.itemid 
+                #itemid="ngModel"
+                [ngClass]="{'is-invalid':(itemid.touched||itemid.dirty)&&!itemid.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=itemid.errors?.required>
+                        The item ID is required
+                    </span>
+
+                    <span *ngIf=itemid.errors?.minlength>
+                        The item ID should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <!-- Fruit Name -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="itemName">Item Name</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="itemName" 
+                minlength="1" 
+                name="itemName" 
+                [(ngModel)]=kitchen.itemName
+                #itemName="ngModel"
+                [ngClass]="{'is-invalid':(itemid.touched||itemid.dirty)&&!itemid.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=itemName.errors?.required>
+                        The item Name is required
+                    </span>
+
+                    <span *ngIf=itemName.errors?.minlength>
+                        The item Name should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <!-- Category -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="itemcat">Category</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="itemcat" 
+                minlength="1" 
+                name="itemcat" 
+                [(ngModel)]=kitchen.itemcat
+                #itemcat="ngModel"
+                [ngClass]="{'is-invalid':(itemcat.touched||itemcat.dirty)&&!itemcat.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=itemcat.errors?.required>
+                        The Category is required
+                    </span>
+
+                    <span *ngIf=itemcat.errors?.minlength>
+                        The Category should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <!-- Src -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="Source">Source image</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="Source" 
+                minlength="1" 
+                name="Src" 
+                [(ngModel)]=kitchen.itemImg
+                #Src="ngModel"
+                [ngClass]="{'is-invalid':(Src.touched||Src.dirty)&&!Src.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=Src.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    <span *ngIf=Src.errors?.minlength>
+                        The Category should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <!-- Price -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="Price">Item cost</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="Price" 
+                minlength="1" 
+                name="Rate" 
+                [(ngModel)]=kitchen.itemprice
+                #Rate="ngModel"
+                [ngClass]="{'is-invalid':(Rate.touched||Rate.dirty)&&!Rate.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=Rate.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    <span *ngIf=Src.errors?.minlength>
+                        The Category should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        
+     <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">submit</button>
+    </form>
+</div>
+</div>

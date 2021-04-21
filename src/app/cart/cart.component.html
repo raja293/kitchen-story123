@@ -1,0 +1,38 @@
+
+<h3 style="margin-left: 46%; ">Cart
+    <a class="btn btn-info" (click)="clear()" style="float: right; margin-right: 2%; margin-top: 0.11%;">Clear Cart</a>
+
+</h3>
+
+<div class='table-responsive'>
+  <table class='table'>
+      <thead style="background: rgb(196, 6, 44); ">
+          <tr class="a">
+              <th>Grocery</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Cost</th>
+              <th>Total Cost</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor='let mov of items'>
+              <td>
+                      <img [src]='mov.itemImg' [width]='imgWidth' [height]='imgHeight'
+                          [style.borderRadius.px]='imgRadius'>
+                      </td>
+                          <td>{{mov.itemName}}</td>
+                          <button class="btn btn-info" (click)='increment(mov.itemid)'>+</button>{{mov.itemquantity}}
+        <button class="btn btn-info" (click)='decrement(mov.itemid)'>-</button>
+              <td>{{mov.itemprice}}</td>
+              <td>{{mov.totalprice}}</td>
+  <td><button class="btn btn-info" (click)="deleteitem(mov.itemName)">Remove</button></td>
+          </tr>
+      </tbody>
+  </table>
+  <h1 style="color: darkblue; margin-left: 40%;">TotalPrice</h1>
+  <h2 style="color: rgb(26, 29, 29); margin-left: 44%;">{{cartTotal |  currency:"&#8377;"}}</h2>
+
+  </div>
+  <button class="btn btn-danger" (click)='pay()' style="margin: 1% 10% 10% 42% ;">Proceed to pay</button>
